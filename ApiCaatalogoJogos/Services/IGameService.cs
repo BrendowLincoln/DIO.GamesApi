@@ -11,7 +11,7 @@ namespace ApiCaatalogoJogos.Services
 {
     public interface IGameService
     {
-        Task<IEnumerable<GameViewModel>> GetGames();
+        Task<IEnumerable<GameViewModel>> GetGames(int page, int quantity);
         Task<GameViewModel> GetGameById(Guid gameId);
         Task<GameViewModel> CreateGame(GameInputModel game);
         Task UpdateGame(Guid gameId, GameInputModel game);

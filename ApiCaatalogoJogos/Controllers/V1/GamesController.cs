@@ -25,7 +25,7 @@ namespace ApiCaatalogoJogos.Controllers.V1
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GameViewModel>>> GetGames([FromQuery, Range(1, int.MaxValue)] int page = 1, [FromQuery, Range(1, 50)] int quantity = 5)
         {
-            var result = await _gameService.GetGames();
+            var result = await _gameService.GetGames(page, quantity);
 
             if(result.Count() == 0)
             {
