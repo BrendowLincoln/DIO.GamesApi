@@ -27,3 +27,9 @@ F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\obj\Debug\net5.0\ApiCaatalogoJog
 F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\obj\Debug\net5.0\ref\ApiCaatalogoJogos.dll
 F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\obj\Debug\net5.0\ApiCaatalogoJogos.pdb
 F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\obj\Debug\net5.0\ApiCaatalogoJogos.genruntimeconfig.cache
+F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\bin\Debug\net5.0\System.Data.SqlClient.dll
+F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\Projects\ApiCaatalogoJogos\ApiCaatalogoJogos\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

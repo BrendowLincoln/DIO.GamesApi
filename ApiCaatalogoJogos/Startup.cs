@@ -1,3 +1,6 @@
+using ApiCaatalogoJogos.Controllers.V1;
+using ApiCaatalogoJogos.Repositories;
+using ApiCaatalogoJogos.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +29,21 @@ namespace ApiCaatalogoJogos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // Services
+            services.AddScoped<IGameService, GameService>();
+
+            // Repository
+            services.AddScoped<IGameRepository, GameSqlServerRepository>();
+
+
+            #region LifeClicle
+
+            services.AddSingleton<ISingletonExample, LifeCliceExample>();
+            services.AddScoped<IScopedExample, LifeCliceExample>();
+            services.AddTransient<ITransientExample, LifeCliceExample>();
+
+            #endregion
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

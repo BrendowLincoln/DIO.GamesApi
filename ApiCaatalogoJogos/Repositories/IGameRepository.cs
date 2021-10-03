@@ -12,7 +12,7 @@ namespace ApiCaatalogoJogos.Repositories
     {
         public Task<List<Game>> GetGames(int page, int quantity);
         public Task<Game> GetGameById(Guid gameId);
-        public Task<List<GameViewModel>> GetGames(string name, string producer);
+        public Task<List<Game>> GetGames(string name, string producer);
         public Task CreateGame(Game game);
         public Task UpdateGame(Game game);
         public Task DeleteGame(Guid gameId);

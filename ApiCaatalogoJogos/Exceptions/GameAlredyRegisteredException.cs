@@ -7,6 +7,6 @@ namespace ApiCaatalogoJogos.Exceptions
 {
     public class GameAlredyRegisteredException : Exception
     {
-        public GameAlredyRegisteredException() : base("Este jogo já está cadastrado") { };
+        public GameAlredyRegisteredException() : base("Este jogo já está cadastrado") { }
     }
 }

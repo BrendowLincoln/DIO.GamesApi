@@ -20,9 +20,11 @@ namespace ApiCaatalogoJogos.Controllers.V1
         public GamesController(IGameService gameService)
         {
             _gameService = gameService;
+
         }
 
         [HttpGet]
+        [Route("GetGames")]
         public async Task<ActionResult<IEnumerable<GameViewModel>>> GetGames([FromQuery, Range(1, int.MaxValue)] int page = 1, [FromQuery, Range(1, 50)] int quantity = 5)
         {
             var result = await _gameService.GetGames(page, quantity);
@@ -35,28 +37,33 @@ namespace ApiCaatalogoJogos.Controllers.V1
             return Ok(result);
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<GameViewModel>> GetGameById([FromRoute] Guid gameId)
+        [HttpGet]
+        [Route(("GetGamesById"))]
+        public async Task<ActionResult<GameViewModel>> GetGameById(Guid gameId)
         {
             var result = await _gameService.GetGameById(gameId);
             return Ok(result);
         }
 
         [HttpPost]
-        public async Task<ActionResult<GameViewModel>> CreateGame([FromBody] GameInputModel game)
+        [Route(("CreateGame"))]
+        public async Task<ActionResult<GameViewModel>> CreateGame(GameInputModel game)
         {
+
             try
             {
                 var result = await _gameService.CreateGame(game);
                 return Ok(result);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return UnprocessableEntity("Já existe um jogo com este nome para esta produtora");
             }
+
         }
 
-        [HttpPut("{id}")]
+        [HttpPut]
+        [Route("UpdateGame/{id}")]
         public async Task<ActionResult> UpdateGame(Guid gameId, GameInputModel game)
         {
             try
@@ -70,7 +77,8 @@ namespace ApiCaatalogoJogos.Controllers.V1
             }
         }
 
-        [HttpPatch("{id}/price/{price}")]
+        [HttpPatch]
+        [Route("UpdateGame/{id}/price/{price}")]
         public async Task<ActionResult> UpdateGame([FromRoute] Guid gameId, [FromRoute] double price)
         {
             try
@@ -84,18 +92,22 @@ namespace ApiCaatalogoJogos.Controllers.V1
             }
         }
 
-        [HttpPost("{id}")]
-        public async Task<ActionResult> DeleteGame([FromRoute] Guid gameId)
+        [HttpPost]
+        [Route(("Delete"))]
+        public async Task<ActionResult> DeleteGame(Guid gameId)
         {
-            try
-            {
-                await _gameService.DeleteGame(gameId);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                return NotFound("Não existe este jogo");
+
+            await _gameService.DeleteGame(gameId);
+            return Ok();
+
+            //    try
+            //    {
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        return NotFound("Não existe este jogo");
+            //    }
             }
         }
-    }
 }

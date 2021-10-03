@@ -48,16 +48,16 @@ namespace ApiCaatalogoJogos.Services
             };
         }
 
-        public Task DeleteGame(Guid gameId)
+        public async Task DeleteGame(Guid gameId)
         {
-            throw new NotImplementedException();
+            await _gameRepository.DeleteGame(gameId);
         }
 
         public async Task<GameViewModel> GetGameById(Guid gameId)
         {
             var game = await _gameRepository.GetGameById(gameId);
 
-            return game == null ? game : new GameViewModel()
+            return game == null ? null : new GameViewModel()
             {
                 Id = game.Id,
                 Name = game.Name,
